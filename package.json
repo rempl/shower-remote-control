@@ -11,8 +11,8 @@
   },
   "keywords": ["shower", "plugin", "rempl", "remote", "control"],
   "scripts": {
+    "build": "browserify --standalone rempl src/shower-plugin.js > index.js && node scripts/postprocess.js && uglifyjs --compress --mangle -o index.js -- index.js",
     "codestyle": "jscs src && eslint src",
-    "build": "browserify --standalone rempl src/shower-plugin.js | uglifyjs --compress --mangle -o index.js",
     "prepublish": "npm run build"
   },
   "devDependencies": {
@@ -24,6 +24,10 @@
     "uglify-js": "^2.6.1"
   },
   "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true
+    },
     "rules": {
       "no-duplicate-case": "error",
       "no-undef": "error",

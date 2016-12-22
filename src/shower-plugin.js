@@ -1,6 +1,11 @@
-shower.modules.define('shower-remote-control', [], function (provide) {
+/* global shower */
+
+var html2canvas = require('html2canvas');
+var rempl = require('rempl');
+
+shower.modules.define('shower-remote-control', [], function(provide) {
     provide(function(shower) {
-        var remotePlayer = rempl.createPublisher('shower-remote-control', rempl.scriptFromFile('remote-ui.js'));
+        var remotePlayer = rempl.createPublisher('shower-remote-control', rempl.scriptFromFile('src/remote-ui.js'));
 
         function sendState() {
             function send(image, notes) {
@@ -55,6 +60,7 @@ shower.modules.define('shower-remote-control', [], function (provide) {
         sendState();
     });
 });
+
 shower.modules.require(['shower'], function(sh) {
     sh.plugins.add('shower-remote-control');
 });

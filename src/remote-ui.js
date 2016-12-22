@@ -1,18 +1,23 @@
+/* global rempl */
+
 rempl.getSubscriber(function(api) {
+    function $(id) {
+        return document.getElementById(id);
+    }
     function prev() {
         api.invoke('prev');
-    };
+    }
     function next() {
         api.invoke('next');
-    };
+    }
     function switchMode() {
         api.invoke('switchMode');
-    };
+    }
 
     api.subscribe(function(data) {
-        slideImage.style.backgroundImage = data.slideImage ? 'url(' + data.slideImage + ')' : '';
-        notes.innerHTML = data.notes || '<span style="color:#AAA">No notes</span>';
-        overlay.style.display = data.slideMode ? 'none' : 'block';
+        $('slideImage').style.backgroundImage = data.slideImage ? 'url(' + data.slideImage + ')' : '';
+        $('notes').innerHTML = data.notes || '<span style="color:#AAA">No notes</span>';
+        $('overlay').style.display = data.slideMode ? 'none' : 'block';
     });
 
     document.body.innerHTML =
@@ -29,8 +34,8 @@ rempl.getSubscriber(function(api) {
         '</div>' +
         '<div id="overlay" style="background:white;position:fixed;z-index:1000;top:0;left:0;right:0;bottom:0"><div style="display:flex;align-items:center;justify-content:center;height:100%"><span id="btn-enterPresentation" style="background:#0AD;padding:20px;cursor:pointer">Start presentation</span></div></div>';
 
-    document.getElementById('btn-prev').onclick = prev;
-    document.getElementById('btn-next').onclick = next;
-    document.getElementById('btn-enterPresentation').onclick = switchMode;
-    document.getElementById('btn-switchMode').onclick = switchMode;
+    $('btn-prev').onclick = prev;
+    $('btn-next').onclick = next;
+    $('btn-enterPresentation').onclick = switchMode;
+    $('btn-switchMode').onclick = switchMode;
 });
