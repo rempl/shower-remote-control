@@ -2,7 +2,7 @@
 
 # shower-remote-control
 
-[Shower](https://github.com/shower/shower) plugin for remote control of presentation. Build on [Rempl](https://github.com/rempl/rempl).
+[Shower](https://github.com/shower/shower) plugin for remote control of presentation. Built on [Rempl](https://github.com/rempl/rempl).
 
 See [remote control in action](https://youtu.be/So_81loUFx0)
 
