@@ -1,0 +1,39 @@
+{
+  "name": "shower-remote-control",
+  "version": "1.0.0",
+  "description": "Shower plugin for remote control of presentation",
+  "author": "Roman Dvornov",
+  "license": "MIT",
+  "repository": "lahmatiy/shower-remote-control",
+  "homepage": "https://github.com/lahmatiy/shower-remote-control",
+  "bugs": {
+    "url": "https://github.com/lahmatiy/shower-remote-control/issues"
+  },
+  "keywords": ["shower", "plugin", "rempl", "remote", "control"],
+  "scripts": {
+    "codestyle": "jscs src && eslint src",
+    "build": "browserify --standalone rempl src/shower-plugin.js | uglifyjs --compress --mangle -o index.js",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "html2canvas": "~0.5.0-beta4",
+    "rempl": "1.0.0-alpha5",
+    "browserify": "^13.0.0",
+    "eslint": "^3.11.1",
+    "jscs": "~3.0.7",
+    "uglify-js": "^2.6.1"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-duplicate-case": "error",
+      "no-undef": "error",
+      "no-unused-vars": ["error", {"vars": "all", "args": "after-used"}]
+    }
+  },
+  "files": [
+    "index.js",
+    "HISTORY.md",
+    "LICENSE",
+    "README.md"
+  ]
+}
