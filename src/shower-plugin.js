@@ -5,11 +5,11 @@ var rempl = require('rempl');
 
 shower.modules.define('shower-remote-control', [], function(provide) {
     provide(function(shower) {
-        var remotePlayer = rempl.createPublisher('shower-remote-control', rempl.scriptFromFile('src/remote-ui.js'));
+        var remoteControl = rempl.createPublisher('shower-remote-control', rempl.scriptFromFile('src/remote-ui.js'));
 
         function sendState() {
             function send(image, notes) {
-                remotePlayer.publish({
+                remoteControl.publish({
                     slideMode: shower.container.isSlideMode(),
                     slidesCount: shower.getSlidesCount(),
                     currentSlide: shower.player.getCurrentSlideIndex(),
@@ -41,7 +41,7 @@ shower.modules.define('shower-remote-control', [], function(provide) {
         shower.container.events.on(['slideadd', 'slideremove', 'slidemodeenter', 'slidemodeexit'], sendState);
         shower.player.events.on(['prev', 'next', 'prevslide', 'nextslide'], sendState);
 
-        remotePlayer.define({
+        remoteControl.provide({
             switchMode: function() {
                 if (shower.container.isSlideMode()) {
                     shower.container.exitSlideMode();

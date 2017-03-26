@@ -5,13 +5,13 @@ rempl.getSubscriber(function(api) {
         return document.getElementById(id);
     }
     function prev() {
-        api.invoke('prev');
+        api.callRemote('prev');
     }
     function next() {
-        api.invoke('next');
+        api.callRemote('next');
     }
     function switchMode() {
-        api.invoke('switchMode');
+        api.callRemote('switchMode');
     }
 
     api.subscribe(function(data) {

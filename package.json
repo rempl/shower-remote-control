@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "html2canvas": "~0.5.0-beta4",
-    "rempl": "1.0.0-alpha5",
+    "rempl": "1.0.0-alpha12",
     "browserify": "^13.0.0",
     "eslint": "^3.11.1",
     "jscs": "~3.0.7",
