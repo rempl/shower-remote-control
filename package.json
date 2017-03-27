@@ -11,7 +11,7 @@
   },
   "keywords": ["shower", "plugin", "rempl", "remote", "control"],
   "scripts": {
-    "build": "browserify --standalone rempl src/shower-plugin.js > index.js && node scripts/postprocess.js && uglifyjs --compress --mangle -o index.js -- index.js",
+    "build": "browserify --standalone rempl src/shower-plugin.js | node scripts/postprocess.js | uglifyjs --compress --mangle -o index.js",
     "codestyle": "jscs src && eslint src",
     "prepublish": "npm run build"
   },
