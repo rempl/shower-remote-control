@@ -1,3 +1,7 @@
+## 1.1.3 (March 30, 2017)
+
+- Fixed build issue
+
 ## 1.1.2 (March 30, 2017)
 
 - Fixed build issue
