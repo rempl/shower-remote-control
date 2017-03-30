@@ -1,7 +1,7 @@
 /* global shower */
 
 var html2canvas = require('html2canvas');
-var rempl = require('rempl');
+var rempl = require('rempl/dist/rempl.js');
 
 shower.modules.define('shower-remote-control', [], function(provide) {
     provide(function(shower) {
